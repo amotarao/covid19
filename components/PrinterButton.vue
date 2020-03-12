@@ -1,7 +1,7 @@
 <template>
   <div :class="wrapperClass">
     <div class="PrinterButton">
-      <v-btn outlined color="#00a040" href="/print/flow" target="_blank">
+      <v-btn outlined color="#00a040" :to="localePath(to)" target="_blank">
         <div class="PrinterButton-PrinterIcon">
           <PrinterIcon />
         </div>
@@ -49,8 +49,11 @@ export default {
   props: {
     wrapperClass: {
       type: String,
-      required: false,
       default: ''
+    },
+    to: {
+      type: String,
+      required: true
     }
   }
 }
